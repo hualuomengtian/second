@@ -1,0 +1,254 @@
+﻿<!--
+ * @Author: your name
+ * @Date: 2021-03-11 16:22:08
+ * @LastEditTime: 2021-03-18 17:54:34
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \zhxt.xianhouse.com\index.html
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西安住房担保业务综合管理平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <style>
+        .login {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #img1 {
+            position: fixed;
+            height: auto;
+            width: 100%;
+        }
+        
+        .login .tit {
+            position: absolute;
+            text-align: center;
+            margin: auto;
+            top: -30px;
+            width: 100%;
+            padding-top: 80px;
+        }
+        
+        .login .tit .border {
+            width: 100%;
+            height: 10px;
+            margin: auto;
+            text-align: center;
+        }
+        
+        .login .tit .img {
+            margin: auto;
+            height: 100px;
+            text-align: center;
+        }
+        
+        .login .tit .img img {
+            width: auto!important;
+            height: 100%!important;
+            margin: auto;
+            text-align: center;
+        }
+        
+        .login .tit h1 {
+            color: #222;
+            padding-top: 25px;
+            font-size: 36px;
+            margin: auto;
+        }
+        
+        .loginBox {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            left: 0;
+            margin-top: -500px;
+        }
+        
+        .loginForm {
+            margin: auto;
+            width: 454px;
+            height: 259px;
+            padding: 50px 0 20px;
+            border: 1px solid #50b9e5;
+            border-radius: 25px 25px 25px 25px;
+            background-color: rgba(179, 232, 255, 0.8);
+        }
+        
+        .formGroup {
+            padding: 6px 0;
+            height: 30px;
+        }
+        
+        .formGroup span {
+            display: inline-block;
+            width: 65px;
+            float: left;
+            margin-left: 80px;
+            line-height: 30px;
+        }
+        
+        .formGroup .inp {
+            height: 20px;
+            line-height: 20px;
+            padding: 4px 10px;
+            border: 1px #999 solid;
+            border-radius: 3px;
+            width: 180px;
+            background: #eaeaea;
+        }
+        
+        .formGroup .inp:focus {
+            border-radius: 3px;
+            outline: none;
+            box-shadow: 0 0 10px #e89894;
+            border: 1px #e89894 solid;
+        }
+        
+        .formGroup .yzmInp {
+            width: 82px;
+        }
+        
+        .loginBtn {
+            background: #CC2424;
+            color: #fff;
+            font-size: 16px;
+            display: inline-block;
+            height: 48px;
+            line-height: 32px;
+            border: none;
+            width: 226px;
+            text-align: center;
+            border-radius: 5px 5PX 5PX 5px;
+            cursor: pointer;
+            margin-top: 35px;
+            margin-left: 100px;
+        }
+        
+        .loginBtn:hover {
+            box-shadow: 0 0 8px #fff;
+            outline: none;
+            background: #fff;
+            color: #CC2424;
+        }
+        
+        .regbtn {
+            background: #feb528;
+            color: #bb2822;
+            font-size: 16px;
+            display: inline-block;
+            height: 32px;
+            line-height: 32px;
+            border: none;
+            width: 101px;
+            text-align: center;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+            margin-top: 35px;
+        }
+        
+        .regbtn:hover {
+            box-shadow: 0 0 8px #feb528;
+            outline: none;
+        }
+        
+        .formOther {
+            padding: 10px 0;
+            line-height: 18px;
+            height: 18px;
+        }
+        
+        .formOther {
+            font-size: 12px;
+        }
+        
+        .formOther a:hover {
+            text-decoration: underline;
+        }
+        
+        .loginCopyright {
+            text-align: center;
+            margin-top: 40px;
+            width: 100%;
+            font-size: 12px;
+            padding-bottom: 0px;
+            color: #fff;
+            font-weight: 500
+        }
+        
+        .loginCopyright a {
+            color: #fff;
+            font-weight: 500
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <img src="picture/bg.png" id="img1" alt="">
+        <div class="tit">
+            <div class="img"><img src="images/1.jpg"></div>
+            <h1>医疗信息综合管理平台</h1>
+        </div>
+    </div>
+    <div class="loginBox">
+        <div class="loginForm">
+            <form action="login_check.php" name=form1 method=post onSubmit="return checkform(form1)" autocomplete="off">
+                <div class="formGroup">
+                    <span>账&emsp;号：</span>
+                    <input type="text" placeholder="请输入用户名" class="inp" name="username" />
+                </div>
+                <div class="formGroup">
+                    <span>密&emsp;码：</span>
+                    <input type="password" placeholder="请输入登录密码" class="inp" name="password" />
+                </div>
+                <div class="formGroup">
+                    <a class="fr"><img src="picture/2215.png" name="img1" id="safecode" border=1 onClick="reloadcode()" width="80" height="30"></a>
+                    <span>验证码：</span>
+                    <input type="text" placeholder="验证码" class="inp yzmInp" name="imgpost" />
+                </div>
+                <div class="formGroup formOther">
+                    <span>&emsp;</span>
+                    <label><input type="checkbox" id="remember_login" checked name="autoLogin"> 记住密码</label>
+                </div>
+                <div class="formGroup"><input type="submit" value="登 录" class="loginBtn" />
+            </form>
+            </div>
+        </div>
+        <div class="loginCopyright">COPYRIGHT © 西安住房担保&emsp;陕ICP备010026号&emsp;技术支持：<a href="http://wuyouhulian.com/" target="_blank">无忧互联</a></div>
+    </div>
+</body>
+
+</html>
+<script language=Javascript>
+    form1.username.focus()
+
+    function checkform(form) {
+        var flag = true;
+        if (form("username").value == "") {
+            alert("请输入用户名!");
+            form("username").focus();
+            return false
+        };
+        if (form("password").value == "") {
+            alert("请输入密码!");
+            form("password").focus();
+            return false
+        };
+        return flag;
+    }
+
+    function reloadcode() {
+
+        var verify = document.getElementById('safecode');
+
+        verify.setAttribute('src', 'includes/authimg.php?id=' + Math.random());
+
+    }
+</script>
